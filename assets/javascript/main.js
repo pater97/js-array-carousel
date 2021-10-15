@@ -7,10 +7,11 @@ Dati tre array contenenti:
 -creare un carosello come nella foto allegata. Al click dell'utente sulle frecce verso l'alto o verso il basso, l'immagine attiva diventa visibile in formato grande a sinistra e nel suo angolo in basso a destra dovranno essere aggiunti i relativi
 titolo e testo. Allo stesso tempo nelle miniature l'immagine attiva dovrà apparire in evidenza rispetto alle altre.
 */
-
+//sisntassi add class--> 
 //COSA FARE:
 /*
- -1  Crezione degli array
+ -1  è l'indice di scorrimento che deve aumentare con l'immagine selezionata! e la stessa immagine farà cambiare quella visualizzata.
+ -2 stampare attraverso il ciclo for le immagini degli arrey
  */
 
 //1
@@ -42,13 +43,32 @@ const text = [
 const avanti = document.querySelector(`.down`)
 const indietro = document.querySelector(`.up`)
 const immaginePrincipale = document.querySelector(`.immagine_vetrina`)
+const immaginiSecondarie = document.getElementById(`template`)
 console.log(avanti, indietro, immaginePrincipale); //test
-//ciclo for 
 // immaginePrincipale.src = "img/02.jpg"
+
+// //STAMPARE LE 5 IMMAGINI ATTRAVERSO CICLO FOR(è disattivato perchè se lo attivo lo scorrimento non funziona più)
+// for (let i = 0; i < items.length; i++) {
+//     console.log(items[i]);
+//     immaginiSecondarie.innerHTML += `<div class="secondary_img"><img src="${items[i]}" alt=""></div>`
+// }
+let immagineSelezionata = 0
+//FARE SCROLLARE IN AVANTI LE IMMAGINI.
 avanti.addEventListener("click", function () {
-    for (let i = 0; i < items.length; i++) {
-        immaginePrincipale.src = items[i]
+    immagineSelezionata++;
+    items[0] = items[immagineSelezionata]
+    immaginePrincipale.src = items[immagineSelezionata];
+    if (immagineSelezionata >= items.length - 1) {
+        immagineSelezionata = 0
     }
 })
-
+indietro.addEventListener("click", function () {
+    immagineSelezionata--;
+    items[0] = items[immagineSelezionata]
+    immaginePrincipale.src = items[immagineSelezionata];
+    if (immagineSelezionata <= 0) {
+        immagineSelezionata = 4 + 1
+        console.log(items[immagineSelezionata]);
+    }
+})
 
