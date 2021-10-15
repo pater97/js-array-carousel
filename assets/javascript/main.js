@@ -38,4 +38,19 @@ const text = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
+//definire le variabili necessarie
+const avanti = document.querySelector(`.down`)
+const indietro = document.querySelector(`.up`)
+const immaginePrincipale = document.querySelector(`.immagine_vetrina`)
+console.log(avanti, indietro, immaginePrincipale); //test
+//ciclo for 
+// immaginePrincipale.src = "img/02.jpg"
+let immagine = items[0]
+console.log(items[0]);
+
+avanti.addEventListener("click", function () {
+    immagine[1]
+})
+console.log(immagine);
+
 

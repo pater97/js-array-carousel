@@ -20,6 +20,7 @@ display: flex;
 #principal_img{
     width: 85%;
     height: 100%;
+    position: relative;
 }
 #template{
     width: 15%;
@@ -53,11 +54,10 @@ img{
     height: 100%;
     width: 100%;
 }
-/* debug */
-.debug .container{
-    background-color: blueviolet;
-}
-.debug .secondary_img{
-    background-color: chartreuse;
-    border: 1px solid blue;
+.text{
+    position: absolute;
+    bottom: 20px;
+    text-align: end;
+    right: 20px;
+    color: white;
 }
