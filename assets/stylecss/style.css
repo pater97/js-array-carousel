@@ -1,0 +1,39 @@
+/* impostazioni di reset  */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* main */
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+height: 300px;
+width: 840px;
+display: flex;
+}
+#principal_img{
+    width: 85%;
+    height: 100%;
+}
+#template{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+.secondary_img{
+    height: calc(100% / 5);
+    width: 100%;
+}
+/* debug */
+.debug .container{
+    background-color: blueviolet;
+}
+.debug .secondary_img{
+    background-color: chartreuse;
+    border: 1px solid blue;
+}
