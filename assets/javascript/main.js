@@ -45,12 +45,10 @@ const immaginePrincipale = document.querySelector(`.immagine_vetrina`)
 console.log(avanti, indietro, immaginePrincipale); //test
 //ciclo for 
 // immaginePrincipale.src = "img/02.jpg"
-let immagine = items[0]
-console.log(items[0]);
-
 avanti.addEventListener("click", function () {
-    immagine[1]
+    for (let i = 0; i < items.length; i++) {
+        immaginePrincipale.src = items[i]
+    }
 })
-console.log(immagine);
 
 
