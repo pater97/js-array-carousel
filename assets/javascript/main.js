@@ -17,6 +17,7 @@ titolo e testo. Allo stesso tempo nelle miniature l'immagine attiva dovrà appar
 //1
 //immagini
 const items = [
+    ,
     'img/01.jpg',
     'img/02.jpg',
     'img/03.jpg',
@@ -25,6 +26,7 @@ const items = [
 ];
 //titoli
 const title = [
+    ,
     'Svezia',
     'Svizzera',
     'Gran Bretagna',
@@ -33,6 +35,7 @@ const title = [
 ]
 //descrizioni
 const text = [
+    ,
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
     'Lorem ipsum',
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
@@ -44,7 +47,9 @@ const avanti = document.querySelector(`.down`)
 const indietro = document.querySelector(`.up`)
 const immaginePrincipale = document.querySelector(`.immagine_vetrina`)
 const immaginiSecondarie = document.getElementById(`template`)
-console.log(avanti, indietro, immaginePrincipale); //test
+const titolo = document.querySelector(`.title`)
+const descrition = document.querySelector(`.descrition`)
+console.log(titolo, descrition); //test
 // immaginePrincipale.src = "img/02.jpg"
 
 // //STAMPARE LE 5 IMMAGINI ATTRAVERSO CICLO FOR(è disattivato perchè se lo attivo lo scorrimento non funziona più)
@@ -52,12 +57,19 @@ console.log(avanti, indietro, immaginePrincipale); //test
 //     console.log(items[i]);
 //     immaginiSecondarie.innerHTML += `<div class="secondary_img"><img src="${items[i]}" alt=""></div>`
 // }
-let immagineSelezionata = 0
+let immagineSelezionata = 1
+immaginePrincipale.src = items[immagineSelezionata]
+titolo.innerHTML = title[immagineSelezionata]
+descrition.innerHTML = text[immagineSelezionata]
+
 //FARE SCROLLARE IN AVANTI LE IMMAGINI.
 avanti.addEventListener("click", function () {
     immagineSelezionata++;
     items[0] = items[immagineSelezionata]
     immaginePrincipale.src = items[immagineSelezionata];
+    titolo.innerHTML = title[immagineSelezionata]
+    descrition.innerHTML = text[immagineSelezionata]
+
     if (immagineSelezionata >= items.length - 1) {
         immagineSelezionata = 0
     }
@@ -66,9 +78,12 @@ indietro.addEventListener("click", function () {
     immagineSelezionata--;
     items[0] = items[immagineSelezionata]
     immaginePrincipale.src = items[immagineSelezionata];
+    titolo.innerHTML = title[immagineSelezionata]
+    descrition.innerHTML = text[immagineSelezionata]
     if (immagineSelezionata <= 0) {
-        immagineSelezionata = 4 + 1
+        immagineSelezionata = 5 + 1
         console.log(items[immagineSelezionata]);
     }
 })
+
 

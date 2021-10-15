@@ -33,6 +33,10 @@ display: flex;
     width: 100%;
     filter: brightness(.7);
 }
+#template .lux_img{
+    filter: brightness(1);
+    border: 2px solid white;
+}
 .icon{
     position: absolute;
     left: 45%;
